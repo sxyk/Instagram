@@ -32,7 +32,8 @@ class ViewController: UIViewController {
             //ログインしていないときの処理
             // viewDidAppear内でpresent()を呼び出しても表示されないためメソッドが終了してから呼ばれるようにする
             DispatchQueue.main.async {
-            let loginViewController = self.storyboard?.instantiateInitialViewController(withIdentifier: "Login")
+//            let loginViewController = self.storyboard?.instantiateInitialViewController(withIdentifier: "Login")
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
             self.present(loginViewController!, animated: true, completion: nil)
             }
         }
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         
     func setupTab() {
         //画像のファイル名を指定してESTabBarControllerを作成する
-        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home", "camera", "setteing"])
+        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home", "camera", "setting"])
         
         //背景色、選択時の色を設定する
         tabBarController.selectedColor = UIColor(red: 1.0, green: 0.44, blue: 0.11, alpha: 1.0)
