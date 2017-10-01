@@ -38,12 +38,27 @@
                     <view key="view" contentMode="scaleToFill" id="qaM-cW-jtf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nwM-HA-JNG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="642"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nwM-HA-JNG" firstAttribute="top" secondItem="qaM-cW-jtf" secondAttribute="top" id="G1x-UV-ttp"/>
+                            <constraint firstItem="nwM-HA-JNG" firstAttribute="leading" secondItem="qaM-cW-jtf" secondAttribute="leading" id="NYD-z9-T4C"/>
+                            <constraint firstItem="0c1-DW-f7f" firstAttribute="top" secondItem="nwM-HA-JNG" secondAttribute="bottom" constant="25" id="XBm-nC-cit"/>
+                            <constraint firstAttribute="trailing" secondItem="nwM-HA-JNG" secondAttribute="trailing" id="gMU-2J-MiE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="nwM-HA-JNG" id="DBa-Xc-hbz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beq-zq-dPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="818"/>
+            <point key="canvasLocation" x="124" y="817.24137931034488"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="erA-ii-eHT">

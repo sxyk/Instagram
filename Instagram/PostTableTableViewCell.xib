@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" rowHeight="528" id="KGk-i7-Jjw" customClass="PostTableTableViewCell" customModule="Instagram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="528"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="528"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA0-wb-K7Q">
+                        <rect key="frame" x="118" y="449.5" width="284" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cx-ef-AkI">
+                        <rect key="frame" x="68" y="449.5" width="40" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="7h4-Ht-Z6e"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZB-88-hQ3">
+                        <rect key="frame" x="0.0" y="10" width="420" height="420"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="yZB-88-hQ3" secondAttribute="height" multiplier="1:1" id="ziZ-Cd-f3n"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-WM-ZXJ">
+                        <rect key="frame" x="18" y="440" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Jtk-l3-Ukx"/>
+                            <constraint firstAttribute="width" constant="40" id="kU8-xA-icn"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="like_none"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVC-sZ-pz7">
+                        <rect key="frame" x="18" y="490" width="384" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oVC-sZ-pz7" firstAttribute="top" secondItem="RW2-WM-ZXJ" secondAttribute="bottom" constant="10" id="2ib-T7-iVT"/>
+                    <constraint firstItem="RW2-WM-ZXJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="5Y7-BM-0cu"/>
+                    <constraint firstItem="oVC-sZ-pz7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="C2v-vg-kmi"/>
+                    <constraint firstItem="oA0-wb-K7Q" firstAttribute="leading" secondItem="9Cx-ef-AkI" secondAttribute="trailing" constant="10" id="HKb-Cm-2f9"/>
+                    <constraint firstItem="RW2-WM-ZXJ" firstAttribute="top" secondItem="yZB-88-hQ3" secondAttribute="bottom" constant="10" id="JLs-Pw-IkE"/>
+                    <constraint firstItem="9Cx-ef-AkI" firstAttribute="centerY" secondItem="RW2-WM-ZXJ" secondAttribute="centerY" id="JRQ-Eg-GcR"/>
+                    <constraint firstItem="oA0-wb-K7Q" firstAttribute="centerY" secondItem="RW2-WM-ZXJ" secondAttribute="centerY" id="Kds-so-QjM"/>
+                    <constraint firstAttribute="trailing" secondItem="yZB-88-hQ3" secondAttribute="trailing" id="Vzn-q5-OjT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oVC-sZ-pz7" secondAttribute="trailing" constant="10" id="duV-mw-ZyN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oA0-wb-K7Q" secondAttribute="trailing" constant="10" id="ec3-4z-UpY"/>
+                    <constraint firstItem="9Cx-ef-AkI" firstAttribute="leading" secondItem="RW2-WM-ZXJ" secondAttribute="trailing" constant="10" id="fvX-qs-eme"/>
+                    <constraint firstItem="yZB-88-hQ3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gJX-b3-lL3"/>
+                    <constraint firstItem="yZB-88-hQ3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="sDI-yN-Ngc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="oVC-sZ-pz7" secondAttribute="bottom" constant="10" id="vhv-rQ-2Ui"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="captionLabel" destination="oVC-sZ-pz7" id="6pH-vf-xlY"/>
+                <outlet property="dateLabel" destination="oA0-wb-K7Q" id="pNe-mf-3eN"/>
+                <outlet property="likeButton" destination="RW2-WM-ZXJ" id="gNz-YL-c6F"/>
+                <outlet property="likeLabel" destination="9Cx-ef-AkI" id="bYs-9A-n4Y"/>
+                <outlet property="postImageView" destination="yZB-88-hQ3" id="nss-nS-3vJ"/>
+            </connections>
+            <point key="canvasLocation" x="601" y="402"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="like_none" width="40" height="40"/>
+    </resources>
+</document>
