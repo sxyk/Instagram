@@ -8,14 +8,14 @@
 
 import UIKit
 
-class PostTableTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
-
+    @IBOutlet weak var addCommentButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,6 +45,9 @@ class PostTableTableViewCell: UITableViewCell {
         
         if postData.isLiked {
             let buttonImage = UIImage(named: "like_exist")
+            self.likeButton.setImage(buttonImage, for: UIControlState.normal)
+        } else {
+            let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: UIControlState.normal)
         }
     }

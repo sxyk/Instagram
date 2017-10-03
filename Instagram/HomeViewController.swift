@@ -59,8 +59,8 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     }
                 })
                 // 要素が変更されたら該当のデータをpostArrayから一度削除した後に新しいデータを追加してTableViewを再表示する
-                postRef.observe(.childAdded, with: { snapshot in
-                    print("DEBUG_PRINT: .childAddedイベントが発生しました")
+                postRef.observe(.childChanged, with: { snapshot in
+                    print("DEBUG_PRINT: .childChangedイベントが発生しました")
                     
                     if let uid = Auth.auth().currentUser?.uid {
                         //PostDataクラスを生成して受け取ったデータを設定する
@@ -112,7 +112,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //セルを取得してデータを設定する
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! PostTableTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! PostTableViewCell
         cell.setPostData(postData: postArray[indexPath.row])
         
         // セル内のボタンのアクションをソースコードで設定する
