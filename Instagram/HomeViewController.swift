@@ -55,7 +55,6 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
                         
                         //tableViewを再表示する
                         self.tableView.reloadData()
-                        
                     }
                 })
                 // 要素が変更されたら該当のデータをpostArrayから一度削除した後に新しいデータを追加してTableViewを再表示する
@@ -86,8 +85,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     }
                 })
                 
-                // DatabaseのobserveEventが上記コードにより登録されたため
-                // trueとする
+                // DatabaseのobserveEventが上記コードにより登録されたためtrueとする
                 observing = true
             }
         } else {
@@ -99,8 +97,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 // オブザーバーを削除する
                 Database.database().reference().removeAllObservers()
                 
-                // DatabaseのobserveEventが上記コードにより解除されたため
-                // falseとする
+                // DatabaseのobserveEventが上記コードにより解除されたためfalseとする
                 observing = false
             }
         }
@@ -116,7 +113,14 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.setPostData(postData: postArray[indexPath.row])
         
         // セル内のボタンのアクションをソースコードで設定する
+        //likeButtonの挙動設定
         cell.likeButton.addTarget(self, action: #selector(handleButton(sender:event:)), for: UIControlEvents.touchUpInside)
+        
+        //commentEditButtonの挙動設定
+        cell.commentEditButton.addTarget(self, action: #selector(editButton(sender:event:)), for: UIControlEvents.touchUpInside)
+        
+        //commentReadButtonの挙動設定
+        cell.commentReadButton.addTarget(self, action: #selector(readButton(sender:event:)), for: UIControlEvents.touchUpInside)
         
         return cell
     }
@@ -163,9 +167,21 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
             let likes = ["likes": postData.likes]
             postRef.updateChildValues(likes)
-            
         }
     }
+    
+    func editButton(sender: UIButton, event:UIEvent) {
+        print("DEBUG_PRINT: コメント編集ボタンがタップされました")
+        let commentEditViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommentEdit") as! CommentEditViewController
+        present(commentEditViewController, animated: true, completion: nil)
+    }
+    
+    func readButton(sender: UIButton, event:UIEvent) {
+        print("DEBUG_PRINT: コメント閲覧ボタンがタップされました")
+        let commentReadViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommentRead") as! CommentReadViewController
+        present(commentReadViewController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

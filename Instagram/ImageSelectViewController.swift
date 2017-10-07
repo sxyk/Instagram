@@ -77,8 +77,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         //加工画面を閉じる
         editor.dismiss(animated: true, completion: nil)
     }
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

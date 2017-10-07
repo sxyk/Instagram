@@ -27,6 +27,8 @@
 		5422E25C1F7E4EA100529F61 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5422E25B1F7E4EA100529F61 /* PostData.swift */; };
 		5422E25F1F7F681A00529F61 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5422E25D1F7F681A00529F61 /* PostTableViewCell.swift */; };
 		5422E2601F7F681A00529F61 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5422E25E1F7F681A00529F61 /* PostTableViewCell.xib */; };
+		54B83E751F84F49C00ACBA9F /* CommentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B83E741F84F49C00ACBA9F /* CommentEditViewController.swift */; };
+		54B83E771F85073400ACBA9F /* CommentReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B83E761F85073400ACBA9F /* CommentReadViewController.swift */; };
 		54BA12BC1F77557000BEFF20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54BA12BB1F77557000BEFF20 /* GoogleService-Info.plist */; };
 		54EDFCE81F7156100055DA00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EDFCE71F7156100055DA00 /* AppDelegate.swift */; };
 		54EDFCEA1F7156100055DA00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EDFCE91F7156100055DA00 /* ViewController.swift */; };
@@ -75,6 +77,8 @@
 		5422E25B1F7E4EA100529F61 /* PostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		5422E25D1F7F681A00529F61 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5422E25E1F7F681A00529F61 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		54B83E741F84F49C00ACBA9F /* CommentEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentEditViewController.swift; sourceTree = "<group>"; };
+		54B83E761F85073400ACBA9F /* CommentReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentReadViewController.swift; sourceTree = "<group>"; };
 		54BA12BB1F77557000BEFF20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54EDFCE41F7156100055DA00 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EDFCE71F7156100055DA00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				54EDFCE71F7156100055DA00 /* AppDelegate.swift */,
 				54EDFCE91F7156100055DA00 /* ViewController.swift */,
 				54EDFCEB1F7156100055DA00 /* Main.storyboard */,
+				54B83E761F85073400ACBA9F /* CommentReadViewController.swift */,
 				5422E2591F7D436800529F61 /* Const.swift */,
 				54EDFCEE1F7156100055DA00 /* Assets.xcassets */,
 				54EDFCF91F766D430055DA00 /* LoginViewController.swift */,
@@ -152,6 +157,7 @@
 				5422E25B1F7E4EA100529F61 /* PostData.swift */,
 				5422E25D1F7F681A00529F61 /* PostTableViewCell.swift */,
 				5422E25E1F7F681A00529F61 /* PostTableViewCell.xib */,
+				54B83E741F84F49C00ACBA9F /* CommentEditViewController.swift */,
 				54EDFD011F766D9E0055DA00 /* SettingViewController.swift */,
 				54EDFCF01F7156100055DA00 /* LaunchScreen.storyboard */,
 				54EDFCF31F7156100055DA00 /* Info.plist */,
@@ -350,9 +356,11 @@
 				54EDFD001F766D8B0055DA00 /* PostViewController.swift in Sources */,
 				5422E25C1F7E4EA100529F61 /* PostData.swift in Sources */,
 				54EDFCFA1F766D430055DA00 /* LoginViewController.swift in Sources */,
+				54B83E771F85073400ACBA9F /* CommentReadViewController.swift in Sources */,
 				54EDFCEA1F7156100055DA00 /* ViewController.swift in Sources */,
 				54EDFCE81F7156100055DA00 /* AppDelegate.swift in Sources */,
 				54EDFCFE1F766D780055DA00 /* ImageSelectViewController.swift in Sources */,
+				54B83E751F84F49C00ACBA9F /* CommentEditViewController.swift in Sources */,
 				5422E25A1F7D436800529F61 /* Const.swift in Sources */,
 				54EDFD021F766D9E0055DA00 /* SettingViewController.swift in Sources */,
 				54EDFCFC1F766D640055DA00 /* HomeViewController.swift in Sources */,
