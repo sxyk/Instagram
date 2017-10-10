@@ -57,7 +57,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
                         self.tableView.reloadData()
                     }
                 })
-                // 要素が変更されたら該当のデータをpostArrayから一度削除した後に新しいデータを追加してTableViewを再表示する
+                //要素が変更されたら該当のデータをpostArrayから一度削除した後に新しいデータを追加してTableViewを再表示する
                 postRef.observe(.childChanged, with: { snapshot in
                     print("DEBUG_PRINT: .childChangedイベントが発生しました")
                     
@@ -91,10 +91,10 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         } else {
             if observing == true {
                 // ログアウトを検出したら、一旦テーブルをクリアしてオブザーバーを削除する。
-                // テーブルをクリアする
+                // テーブルをクリア
                 postArray = []
                 tableView.reloadData()
-                // オブザーバーを削除する
+                // オブザーバーを削除
                 Database.database().reference().removeAllObservers()
                 
                 // DatabaseのobserveEventが上記コードにより解除されたためfalseとする
@@ -112,13 +112,11 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! PostTableViewCell
         cell.setPostData(postData: postArray[indexPath.row])
         
-        // セル内のボタンのアクションをソースコードで設定する
+        //セル内のボタンのアクションをソースコードで設定する
         //likeButtonの挙動設定
         cell.likeButton.addTarget(self, action: #selector(handleButton(sender:event:)), for: UIControlEvents.touchUpInside)
-        
         //commentEditButtonの挙動設定
         cell.commentEditButton.addTarget(self, action: #selector(editButton(sender:event:)), for: UIControlEvents.touchUpInside)
-        
         //commentReadButtonの挙動設定
         cell.commentReadButton.addTarget(self, action: #selector(readButton(sender:event:)), for: UIControlEvents.touchUpInside)
         

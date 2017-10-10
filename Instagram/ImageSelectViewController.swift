@@ -41,11 +41,10 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
              // 撮影/選択された画像を取得する
             let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             
-            // あとでAdobeUXImageEditorを起動する
-            // AdobeUXImageEditorで、受け取ったimageを加工できる
-            // ここでpresentViewControllerを呼び出しても表示されないためメソッドが終了してから呼ばれるようにする
+            //AdobeUXImageEditorで、受け取ったimageを加工できる
+            //ここでpresentViewControllerを呼び出しても表示されないためメソッドが終了してから呼ばれるようにする
             DispatchQueue.main.async {
-                // AdobeImageEditorを起動する
+                //AdobeImageEditorを起動する
                 let adobeViewController = AdobeUXImageEditorViewController(image: image)
                 adobeViewController.delegate = self
                 self.present(adobeViewController, animated: true, completion: nil)

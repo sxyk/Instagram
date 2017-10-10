@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class CommentEditViewController: UIViewController {
-
-    @IBOutlet weak var commentFileld: UITextField!
+    
+    @IBOutlet weak var commentField: UITextField!
     @IBAction func commentPostButton(_ sender: Any) {
         
+        let time = NSDate.timeIntervalSinceReferenceDate
+        let name = Auth.auth().currentUser?.displayName
         
+        let postRef = Database.database().reference().child(Const.PostPath)
+        let comments = ["comment": commentField.text!, "time": String(time), "name": name!]
+        postRef.childByAutoId().setValue(comments)
     }
 
     @IBAction func onClose(_ sender: Any) {

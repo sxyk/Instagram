@@ -360,6 +360,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omY-gw-HVs">
                                 <rect key="frame" x="137" y="165" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="RmH-7C-baG"/>
+                                </constraints>
                                 <state key="normal" title="投稿する" backgroundImage="btn"/>
                                 <connections>
                                     <action selector="commentPostButton:" destination="bQb-ls-utg" eventType="touchUpInside" id="8Cg-rZ-4Wc"/>
@@ -367,6 +370,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-XO-7PM">
                                 <rect key="frame" x="137" y="225" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="JNK-L4-xUg"/>
+                                </constraints>
                                 <state key="normal" title="戻る" backgroundImage="btn"/>
                                 <connections>
                                     <action selector="onClose:" destination="bQb-ls-utg" eventType="touchUpInside" id="jVO-p8-aZg"/>
@@ -383,7 +389,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="commentFileld" destination="Mq2-8b-nOe" id="suo-Q6-6Fp"/>
+                        <outlet property="commentField" destination="Mq2-8b-nOe" id="Lp8-ee-ICc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vy1-se-0KR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,7 +416,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CommentCell" tableViewCell="twV-V0-MRD" id="UC3-Tu-JAr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
