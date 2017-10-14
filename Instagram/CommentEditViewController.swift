@@ -12,15 +12,20 @@ import FirebaseDatabase
 
 class CommentEditViewController: UIViewController {
     
+    var postData:PostData!
+    
     @IBOutlet weak var commentField: UITextField!
     @IBAction func commentPostButton(_ sender: Any) {
         
-        let time = NSDate.timeIntervalSinceReferenceDate
         let name = Auth.auth().currentUser?.displayName
         
-        let postRef = Database.database().reference().child(Const.PostPath)
-        let comments = ["comment": commentField.text!, "time": String(time), "name": name!]
-        postRef.childByAutoId().setValue(comments)
+        if let commentText = commentField.text {
+            postData.comments.append("\(name!): \(commentText)")
+        }
+
+        let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
+        
+        postRef.updateChildValues(["comment s": postData.comments])
     }
 
     @IBAction func onClose(_ sender: Any) {
@@ -36,6 +41,11 @@ class CommentEditViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let commentReadViewController:CommentReadViewController = segue.destination as! CommentReadViewController
+        commentReadViewController.postData = postData
     }
     
 

@@ -117,6 +117,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.likeButton.addTarget(self, action: #selector(handleButton(sender:event:)), for: UIControlEvents.touchUpInside)
         //commentEditButtonの挙動設定
         cell.commentEditButton.addTarget(self, action: #selector(editButton(sender:event:)), for: UIControlEvents.touchUpInside)
+        cell.commentEditButton.tag = indexPath.row
         //commentReadButtonの挙動設定
         cell.commentReadButton.addTarget(self, action: #selector(readButton(sender:event:)), for: UIControlEvents.touchUpInside)
         
@@ -133,21 +134,21 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    //セル内のボタンがタップされた時に呼ばれるメソッド
     func handleButton(sender: UIButton, event:UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました")
-        // タップされたセルのインデックスを求める
+        //タップされたセルのインデックスを求める
         let touch = event.allTouches?.first
         let point = touch!.location(in: self.tableView)
         let indexPath = tableView.indexPathForRow(at: point)
         
-        // 配列からタップされたインデックスのデータを取り出す
+        //配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
         
-        // Firebaseに保存するデータの準備
+        //Firebaseに保存するデータの準備
         if let uid = Auth.auth().currentUser?.uid {
             if postData.isLiked {
-                // すでにいいねをしていた場合はいいねを解除するためIDを取り除く
+                //すでにいいねをしていた場合はいいねを解除するためIDを取り除く
                 var index = -1
                 for likeId in postData.likes {
                     if likeId == uid {
@@ -161,7 +162,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 postData.likes.append(uid)
             }
             
-            // 増えたlikesをFirebaseに保存する
+            //増えたlikesをFirebaseに保存する
             let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
             let likes = ["likes": postData.likes]
             postRef.updateChildValues(likes)
@@ -171,6 +172,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
     func editButton(sender: UIButton, event:UIEvent) {
         print("DEBUG_PRINT: コメント編集ボタンがタップされました")
         let commentEditViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommentEdit") as! CommentEditViewController
+        commentEditViewController.postData = postArray[sender.tag]
         present(commentEditViewController, animated: true, completion: nil)
     }
     

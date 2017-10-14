@@ -1,4 +1,4 @@
-    //
+//
 //  CommentReadViewController.swift
 //  Instagram
 //
@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class CommentReadViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    var postArray: [PostData] = []
+    var postData:PostData!
 
     @IBOutlet weak var tableView: UITableView!
-    
     @IBAction func onClose(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -27,12 +31,17 @@ class CommentReadViewController: UIViewController,UITableViewDelegate,UITableVie
     //MARK: UITableViewDataSourceプロトコルのメソッド
     //データの数（＝セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
+        return postData.comments.count
     }
     
     //各セルの内容を返すメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let commentCell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath)
+        let commentCell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath as IndexPath)
+        
+        let comment = postData.comments[indexPath.row]
+        commentCell.textLabel?.text = comment
+        
         return commentCell
     }
     

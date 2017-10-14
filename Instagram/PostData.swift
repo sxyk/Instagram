@@ -20,7 +20,7 @@ class PostData: NSObject {
     var likes: [String] = []
     var isLiked: Bool = false
     
-    var comments:[String] = []
+    var comments: [String] = []
     
     init(snapshot: DataSnapshot, myid: String) {
         self.id = snapshot.key
@@ -28,7 +28,9 @@ class PostData: NSObject {
         let valueDictionary = snapshot.value as! [String:AnyObject]
         
         imageString = valueDictionary["image"] as? String
-        image = UIImage(data: NSData(base64Encoded: imageString!, options: .ignoreUnknownCharacters)! as Data)
+        if let imageStringA = imageString {
+            image = UIImage(data: NSData(base64Encoded: imageStringA, options: .ignoreUnknownCharacters)! as Data)
+        }
         
         self.name = valueDictionary["name"] as? String
         self.caption = valueDictionary["caption"] as? String
@@ -38,8 +40,6 @@ class PostData: NSObject {
         
         if let likes = valueDictionary["iikes"] as? [String] {
             self.likes = likes
-            
-        
         }
         
         for liked in self.likes {
